@@ -9,6 +9,7 @@ public class EndToEndTest {
 		// TODO Auto-generated method stub
 		
 		//Add GMap location
+		//Adding Comment to Rebase
 		
 		String locationJson= "{\r\n" + 
 				"  \"location\": {\r\n" + 
