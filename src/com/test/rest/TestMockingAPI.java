@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import MockingResponse.MockingAPIResponse;
+import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 
 public class TestMockingAPI {
@@ -31,9 +32,13 @@ public class TestMockingAPI {
 	
 	@Test()
 	public void validate_ArrayResponse() {
-		JsonPath jp = new JsonPath(MockingAPIResponse.validate_ArrayResponse());
+		RestAssured.baseURI = "https://jsonplaceholder.typicode.com/users";
+		String responseBody = RestAssured.given().log().all().queryParam("id", "1")
+		.when().get()
+		.then().assertThat().statusCode(200).extract().response().asString();
+		JsonPath jp = new JsonPath(responseBody);
 		System.out.println(jp.getString("[0].name"));
-		
+		Assert.assertEquals(jp.getString("[0].name"), "Leanne Graham");
 	}
 	
 }

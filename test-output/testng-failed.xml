@@ -5,7 +5,7 @@
     <classes>
       <class name="com.test.rest.TestMockingAPI">
         <methods>
-          <include name="validate_Amount"/>
+          <include name="validate_ArrayResponse"/>
         </methods>
       </class> <!-- com.test.rest.TestMockingAPI -->
     </classes>
