@@ -2,20 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="5211" started-at="2021-05-22T21:51:29 IST" finished-at="2021-05-22T21:51:34 IST">
+  <suite name="Default suite" duration-ms="4310" started-at="2021-05-25T10:50:29 IST" finished-at="2021-05-25T10:50:34 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="5211" started-at="2021-05-22T21:51:29 IST" finished-at="2021-05-22T21:51:34 IST">
-      <class name="com.test.rest.GetPlaceAPI">
-        <test-method status="PASS" signature="before_Test()[pri:0, instance:com.test.rest.GetPlaceAPI@d44fc21]" name="before_Test" is-config="true" duration-ms="607" started-at="2021-05-22T21:51:29 IST" finished-at="2021-05-22T21:51:30 IST">
+    <test name="Default test" duration-ms="4310" started-at="2021-05-25T10:50:29 IST" finished-at="2021-05-25T10:50:34 IST">
+      <class name="com.test.rest.GetFirstUserArray">
+        <test-method status="PASS" signature="get_ArrayResponse()[pri:0, instance:com.test.rest.GetFirstUserArray@694e1548]" name="get_ArrayResponse" duration-ms="4243" started-at="2021-05-25T10:50:29 IST" finished-at="2021-05-25T10:50:34 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- before_Test -->
-        <test-method status="PASS" signature="get_Place()[pri:0, instance:com.test.rest.GetPlaceAPI@d44fc21]" name="get_Place" duration-ms="4563" started-at="2021-05-22T21:51:30 IST" finished-at="2021-05-22T21:51:34 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- get_Place -->
-      </class> <!-- com.test.rest.GetPlaceAPI -->
+        </test-method> <!-- get_ArrayResponse -->
+      </class> <!-- com.test.rest.GetFirstUserArray -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

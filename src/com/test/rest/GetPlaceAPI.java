@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
-import pojo.GetLocation;
+import pojo.GeoLocation;
 
 public class GetPlaceAPI {
 	
@@ -24,9 +24,9 @@ public class GetPlaceAPI {
 	public void get_Place() {
 		HashMap<String, String> addparam = Constants.getParam();
 		addparam.put("place_id", "a0ebd6830f1058ba5140f38cbe44469b");
-		GetLocation loca = RestAssured.given().log().all()
+		GeoLocation loca = RestAssured.given().log().all()
 		.queryParams(addparam)
-		.when().get(Constants.GetResource).as(GetLocation.class);
+		.when().get(Constants.GetResource).as(GeoLocation.class);
 		
 		Assert.assertEquals("My new house", loca.getName());
 		

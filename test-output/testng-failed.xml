@@ -3,12 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.test.rest.GetPlaceAPI">
+      <class name="com.test.rest.GetFirstUserArray">
         <methods>
-          <include name="before_Test"/>
-          <include name="get_Place"/>
+          <include name="get_ArrayResponse"/>
         </methods>
-      </class> <!-- com.test.rest.GetPlaceAPI -->
+      </class> <!-- com.test.rest.GetFirstUserArray -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
