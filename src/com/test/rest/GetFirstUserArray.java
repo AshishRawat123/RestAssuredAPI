@@ -1,5 +1,6 @@
 package com.test.rest;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
@@ -17,9 +18,10 @@ public class GetFirstUserArray {
 		.when().get().as(UserDetails[].class);
 		
 		System.out.println("USER NAME "+hr[0].getName());
-		System.out.println("USER EMAIL "+hr[0].getEmail());
-		System.out.println("COMAPNY DETAILS  "+hr[0].getCompany().getName());
-		System.out.println("COMAPNY DETAILS  "+hr[0].getAddress().getCity());
+		Assert.assertEquals(hr[0].getName(), "Leanne Graham");
+		Assert.assertEquals(hr[0].getEmail(),"Sincere@april.biz");
+		Assert.assertEquals(hr[0].getCompany().getName(),"Romaguera-Crona");
+		Assert.assertEquals(hr[0].getAddress().getCity(),"Gwenborough");
 				
 	}
 
