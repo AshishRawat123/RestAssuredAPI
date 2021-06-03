@@ -1,7 +1,7 @@
 package pojo;
 
 
-public class GeoLocation {
+public class GeoLocation2 {
 
 	private Location location;
 	private String accuracy;
@@ -36,7 +36,7 @@ public class GeoLocation {
 	this.name = name;
 	}
 
-	public String getPhoneNumber() {
+	public String getPhone_number() {
 	return phone_number;
 	}
 
