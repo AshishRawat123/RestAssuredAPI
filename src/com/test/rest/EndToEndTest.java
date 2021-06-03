@@ -1,11 +1,16 @@
 package com.test.rest;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Properties;
+
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 
 public class EndToEndTest {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
 		//Add GMap location
@@ -35,13 +40,16 @@ public class EndToEndTest {
 		.when().post(Constants.PostResource)
 		.then().log().all().extract().response().asString();
 		
+		Properties prop = new Properties();
 		System.out.println("Response Body is : "+reponseBody);
-		
-	
 		
 		//Delete The location on the Basis of place_id
 		JsonPath jpath= new JsonPath(reponseBody);
 		String place_id = jpath.getString("place_id");
+		
+		prop.put("place_id", place_id);
+		FileOutputStream outputStrem = new FileOutputStream(System.getProperty("user.dir")+"//saveData.properties");
+		prop.store(outputStrem, "This is a sample properties file");
 		
 		// TODO Get the Update Address
 		String getResponse = RestAssured.given().log().all().queryParams(Constants.getParam()).queryParam("place_id", place_id)

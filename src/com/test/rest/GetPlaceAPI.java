@@ -10,13 +10,12 @@ import org.testng.annotations.Test;
 import com.test.Utils.Util;
 
 import io.restassured.RestAssured;
-import io.restassured.specification.RequestSpecification;
-import pojo.GeoLocation;
 import pojo.GeoLocation2;
 
 public class GetPlaceAPI {
 	
 	private String placeID=null;
+	
 	
 	@BeforeTest()
 	public void before_Test() {
