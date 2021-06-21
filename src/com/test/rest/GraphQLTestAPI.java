@@ -1,10 +1,14 @@
 package com.test.rest;
 
 import java.util.HashMap;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -38,7 +42,19 @@ public class GraphQLTestAPI {
 
 		//Assertion to Check the email ID is present
 		Assert.assertEquals(JsonPath.from(responseString).getString("data.online_users.id[1]"), "test321@gmail.com");
-	
+		
+		List<Object> le = JsonPath.from(responseString).getList("data.online_users.id");
+		SoftAssert softy = new SoftAssert();
+		
+		// Validate the Email ID
+		for(Object j : le) {
+			String id =j.toString();
+			
+			Pattern pEmail = Pattern.compile("[a-zA-Z][a-zA-Z0-9_.]*@[a-zA-Z0-9].[a-zA-Z]");
+			Matcher mEmail = pEmail.matcher(id);
+			softy.assertTrue(mEmail.find(), id+" is not the valid Email ID");
+		}
+	softy.assertAll();
 				
 		
 	}
