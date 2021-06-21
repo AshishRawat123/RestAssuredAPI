@@ -26,10 +26,7 @@ public class FirstApiTest {
         
         req.header("Content-type","application/json");
         
-        //GET Token
-        JSONObject requestParams = new JSONObject();
-        
-        
+        //GET Token     
         Response response = req.body("{ \"userName\":\"" + userName + "\", \"password\":\"" + password + "\"}")
                 .post("/Account/v1/GenerateToken");
         String token =JsonPath.from(response.asString()).get("token");
